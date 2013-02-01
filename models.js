@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://heroku_app11509609:m17jrlsal66tvhsnaun46nam93@ds031877.mongolab.com:31877/heroku_app11509609'|'mongodb://localhost/burgers');
+mongoose.connect(process.env.MONGOLAB_URI||'mongodb://localhost/burgers');
 
 var ingSchema = mongoose.Schema({
     name: String,
