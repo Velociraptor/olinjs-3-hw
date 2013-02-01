@@ -1,0 +1,23 @@
+extends layout
+
+
+
+block content
+  h1= title
+  form(id='formit')
+
+    | Customer Name:
+
+    input(name='customerName', id='custname')
+
+    div
+      | Ingredient Options:
+
+      ul(id="inglist")
+        each ing, i in ings
+          li
+            div= ing.name + '   $' + ing.cost
+              input(type='checkbox', name='ingredients', value=ing._id, id='inginput')
+
+    button(type='submit')
+      | Place Your Order

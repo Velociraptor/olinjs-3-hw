@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+
+  div
+    | All Orders:
+
+    ul(id="ordlist")
+      each order, i in orders
+        li(id=order._id)
+          p #{order.customerName}
+            ul(id="ings")
+              each ing, i in order.ingredients
+                li
+                  p #{ing.name}
+            button(id=order._id, class="completeButton")
+              | Complete
